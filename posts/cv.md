@@ -12,7 +12,7 @@ Currently, I am working as a product data analyst in fintech company Space307. M
 
 ### Work experience
 
-####Product data analyst
+#### Product data analyst
 Space307: January 2018 – current
 
 - Users classification and segmentation
@@ -29,7 +29,7 @@ implementation for backend / frontend / android teams
 platforms and from internal databases, enriching Google Analytics data (Measurement protocol) with internal events etc.
 
 
-####Web-analyst
+#### Web-analyst
 RealWeb digital agency: February 2016 – December 2017
 
 - Web-analytics tasks for launches of different digital advertising campaigns (counters deployment, goals and audiences creation, utm-tags discussion)
@@ -39,14 +39,14 @@ RealWeb digital agency: February 2016 – December 2017
 time-series traffic forecasting, analysis of CPC confidence intervals for better budget decisions
 
 
-####Marketing analyst (gas stations marketing)
+#### Marketing analyst (gas stations marketing)
 OJSC Gazprom Oil (Head office): September 2015 – February 2016
 - Weekly sales reporting
 - Analysis of marketing campaigns on gas stations (efficiency estimation mostly)
 - Optimisation and automatization of current reporting system
 
 
-####Senior B2B/G market analyst
+#### Senior B2B/G market analyst
 OJSC MegaFon (North-West branch): December 2013 – September 2015
 
 - Daily, monthly reporting from SAP BusinessObjects
