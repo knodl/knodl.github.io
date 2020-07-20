@@ -1,1 +1,6 @@
-theme: jekyll-theme-slate
+theme: jekyll-theme-minimal
+title: Pasha Loginov
+description: A personal blog
+logo: ./img/avatar.png
+google_analytics: UA-167763642-1
+
