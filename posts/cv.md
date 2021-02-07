@@ -11,9 +11,17 @@ Currently, I am working as a product data analyst in fintech company Space307. M
 
 
 ### Work experience
+#### Product data analyst
+Vkontakte (vk.com): September 2020 – present
+
+- Developing current A/B testing system
+- Management of product data into Clickhouse cluster tables
+- Ad-hoc analytics
+- Maintaining and developing internal utils (ETL, logging, etc.)
+- User behavior ad-hoc research
 
 #### Product data analyst
-Space307: January 2018 – current
+Space307: January 2018 – September 2020
 
 - Users classification and segmentation
 - Mediabuying optimizations via custom lookalike audience
