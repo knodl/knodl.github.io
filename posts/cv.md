@@ -67,6 +67,8 @@ OJSC MegaFon (North-West branch): December 2013 – September 2015
 ### Skills
 - Python / R for different tasks (ETL, statistical analysis, time-series forecasting, etc.)
 - SQL as a main tool for data manipulation
+- Bash scripting for simple automation tasks
+- Git
 - Reporting tools – DataStudio, R Shiny, PowerBI
 - Applied statistical skills – LTV estimation, survival analysis, time-series analysis, anomaly detection, etc.
 - Web-analytics, both app and web – GTM events tracking, experience with Appsflyer and Firebase for apps and Google Analytics 360 and Yandex Metrica for web
