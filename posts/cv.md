@@ -7,7 +7,14 @@ Telegram: @knodl
 LinkedIn: [https://www.linkedin.com/in/pavel-loginov-6b14216a/](https://www.linkedin.com/in/pavel-loginov-6b14216a/)
 
 ### About
-Currently, I am working as a product data analyst in fintech company Space307. My main responsibilities include but not limited with an attribution modelling, implementing audience segmentation for remarketing purposes, prototyping ML-models for LTV estimation, budget optimisation and analysis of A/B tests results.
+Currently, I am working as a data analytics engineer at vk.com, russian largest social network.
+Our team biuld tools for all analytics teams in our company.
+My main responsibilities include but not limited with:
+
+- development of A/B testing platform (ETL + statistical modelling)
+- mainaining and developing internal aggregation tool
+- maintaining other internal tools (anomaly detection service, clickhouse API, etc.)
+- adhoc reporing
 
 
 ### Work experience
