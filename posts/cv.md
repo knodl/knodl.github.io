@@ -1,6 +1,6 @@
 ## PAVEL LOGINOV
 
-Current Location: Saint-Petersburg, Russia
+Current Location: Limassol, Cyprus
 
 Telegram: @knodl
 
@@ -18,8 +18,18 @@ My main responsibilities include but not limited with:
 
 
 ### Work experience
-#### Product data analyst
-Vkontakte (vk.com): September 2020 – present
+#### Senior Product Analyst
+WeatherWell (Palta): March 2022 – present
+
+- User behavior ad-hoc research
+- Reporting
+- Product experimentation system (from scratch)
+- Analytics infra deployment and support
+- Data engineering (from scratch)
+- Web-analytics
+
+#### Senior Analytics Engineer
+Vkontakte (vk.com): September 2020 – March 2022
 
 - Developing current A/B testing system
 - Management of product data into Clickhouse cluster tables
@@ -73,10 +83,11 @@ OJSC MegaFon (North-West branch): December 2013 – September 2015
 
 ### Skills
 - Python / R for different tasks (ETL, statistical analysis, time-series forecasting, etc.)
-- SQL as a main tool for data manipulation
+- SQL as a main tool for data manipulation (Clickhouse, Redshift, Vertica)
+- AWS for data analytics (boto3 / simple EC2 management / etc)
 - Bash scripting for simple automation tasks
 - Git
-- Reporting tools – DataStudio, R Shiny, PowerBI
+- Reporting tools – DataStudio, R Shiny, Redash, Superset, PowerBI
 - Applied statistical skills – LTV estimation, survival analysis, time-series analysis, anomaly detection, etc.
 - Web-analytics, both app and web – GTM events tracking, experience with Appsflyer and Firebase for apps and Google Analytics 360 and Yandex Metrica for web
 
