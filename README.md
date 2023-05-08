@@ -1,6 +1,6 @@
 ## Pasha Loginov
 
-Hi, I'm Pasha and I'm data analyst at VK (or vk.com) – russian largest social network.
+Hi, I'm Pasha and I'm data analyst with a broad area of interest.
 At work I do a broad list of data-related tasks starting from data cleaning and ending with prototyping ML-models to enhance our internal decision-making processes.
 I'm really happy that my interests and my job are in sync, so my interests and hobbies are a bit data-related also.
 
