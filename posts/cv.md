@@ -3,6 +3,7 @@
 Current Location: Limassol, Cyprus
 
 Telegram: @knodl
+
 LinkedIn: [https://www.linkedin.com/in/loginovp/](https://www.linkedin.com/in/loginovp/)
 
 ### About
