@@ -3,29 +3,29 @@
 Current Location: Limassol, Cyprus
 
 Telegram: @knodl
-
-LinkedIn: [https://www.linkedin.com/in/pavel-loginov-6b14216a/](https://www.linkedin.com/in/pavel-loginov-6b14216a/)
+LinkedIn: [https://www.linkedin.com/in/loginovp/](https://www.linkedin.com/in/loginovp/)
 
 ### About
-Currently, I am working as a data analytics engineer at vk.com, russian largest social network.
-Our team biuld tools for all analytics teams in our company.
+Currently, I am working as a Data Analyst at Palta – health & well-being technology company.
+I do web and app analytics with first-hand experience in transforming petabytes of raw data into business value.
+I have a strong background in cross-functional interaction and a track record of successfully driving and taking responsibility for various analytics projects.
+Also I can to explain complex things in a simple manner and enjoy sharing my expertise with the community.
+
 My main responsibilities include but not limited with:
 
-- development of A/B testing platform (ETL + statistical modelling)
-- mainaining and developing internal aggregation tool
-- maintaining other internal tools (anomaly detection service, clickhouse API, etc.)
+- proactively looking for insights in data through user research and experimentation
+- maintaining and deeloping internal analytics tools and infrastructure
 - adhoc reporing
 
-
-### Work experience
+### Most recent work experience
 #### Senior Product Analyst
-WeatherWell (Palta): March 2022 – present
+Palta: March 2022 – present
 
 - User behavior ad-hoc research
 - Reporting
-- Product experimentation system (from scratch)
-- Analytics infra deployment and support
-- Data engineering (from scratch)
+- Product experimentation
+- Analytics infra deployment
+- Data engineering tasks
 - Web-analytics
 
 #### Senior Analytics Engineer
@@ -62,23 +62,6 @@ RealWeb digital agency: February 2016 – December 2017
 - Reporting on advertising campaigns performance via DataStudio / PowerBI / R Shiny / google sheets
 - Statistical analysis – testing the significance of the difference between KPI levels,
 time-series traffic forecasting, analysis of CPC confidence intervals for better budget decisions
-
-
-#### Marketing analyst (gas stations marketing)
-OJSC Gazprom Oil (Head office): September 2015 – February 2016
-- Weekly sales reporting
-- Analysis of marketing campaigns on gas stations (efficiency estimation mostly)
-- Optimisation and automatization of current reporting system
-
-
-#### Senior B2B/G market analyst
-OJSC MegaFon (North-West branch): December 2013 – September 2015
-
-- Daily, monthly reporting from SAP BusinessObjects
-- Custom reports for the North-West branch executives
-- Short- and long-term revenue forecasts for each region in North-West branch
-- Facilitating a communications between IT-team and financial services team
-- Researching different causes of anomalies in revenue flows from large B2B/G clients
 
 
 ### Skills
