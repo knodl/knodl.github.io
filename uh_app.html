@@ -10,6 +10,26 @@ font-family: Tahoma, Verdana, Arial, sans-serif; }
 </style>
 </head>
 <body>
-Hello, UH
+<p>Click the button below to open your device camera and see the real-time preview.</p>
+<button id="startBtn">Start Camera</button>
+<video id="video" autoplay playsinline></video>
+
+<script>
+  const startBtn = document.getElementById('startBtn');
+  const video = document.getElementById('video');
+
+  startBtn.addEventListener('click', async () => {
+    try {
+      // Request the device camera stream
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      // Set the video element source to the obtained stream
+      video.srcObject = stream;
+    } catch (err) {
+      console.error('Error accessing camera: ', err);
+      alert('Could not access camera. Please ensure you have given permission and that your device has a camera.');
+    }
+  });
+</script>
+  
 </body>
 </html>
