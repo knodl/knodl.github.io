@@ -20,13 +20,15 @@ font-family: Tahoma, Verdana, Arial, sans-serif; }
 
   startBtn.addEventListener('click', async () => {
     try {
-      // Request the device camera stream
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-      // Set the video element source to the obtained stream
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: {
+          facingMode: { ideal: 'environment' } // or { exact: 'environment' }
+        }
+      });
       video.srcObject = stream;
     } catch (err) {
-      console.error('Error accessing camera: ', err);
-      alert('Could not access camera. Please ensure you have given permission and that your device has a camera.');
+      console.error('Error accessing camera:', err);
+      alert('Could not access the back camera. Please ensure permissions are granted and device supports this camera mode.');
     }
   });
 </script>
