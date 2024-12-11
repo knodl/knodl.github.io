@@ -10,28 +10,52 @@ font-family: Tahoma, Verdana, Arial, sans-serif; }
 </style>
 </head>
 <body>
-<p>Click the button below to open your device camera and see the real-time preview.</p>
+
+<h1>Camera Photo Capture</h1>
 <button id="startBtn">Start Camera</button>
 <video id="video" autoplay playsinline></video>
+<button id="captureBtn" style="display:none;">Take Photo</button>
+<canvas id="canvas" style="display:none;"></canvas>
+<img id="photo" alt="Captured Image" style="display:none;"/>
 
 <script>
   const startBtn = document.getElementById('startBtn');
+  const captureBtn = document.getElementById('captureBtn');
   const video = document.getElementById('video');
+  const canvas = document.getElementById('canvas');
+  const photo = document.getElementById('photo');
+
+  let stream;
 
   startBtn.addEventListener('click', async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({
-        video: {
-          facingMode: { ideal: 'environment' } // or { exact: 'environment' }
-        }
-      });
+      stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
       video.srcObject = stream;
+      captureBtn.style.display = 'inline-block'; // show the Take Photo button once camera starts
     } catch (err) {
       console.error('Error accessing camera:', err);
-      alert('Could not access the back camera. Please ensure permissions are granted and device supports this camera mode.');
+      alert('Could not access camera. Please ensure you have given permission and that your device has a camera.');
     }
   });
-</script>
-  
+
+  captureBtn.addEventListener('click', () => {
+    const width = video.videoWidth;
+    const height = video.videoHeight;
+
+    canvas.width = width;
+    canvas.height = height;
+    const context = canvas.getContext('2d');
+
+    // Draw the current frame from the video onto the canvas
+    context.drawImage(video, 0, 0, width, height);
+
+    // Convert the canvas to a data URL (base64-encoded image)
+    const dataUrl = canvas.toDataURL('image/png');
+
+    // Display the captured image
+    photo.src = dataUrl;
+    photo.style.display = 'block';
+  });
+</script>  
 </body>
 </html>
