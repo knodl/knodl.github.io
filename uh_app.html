@@ -56,6 +56,24 @@ font-family: Tahoma, Verdana, Arial, sans-serif; }
     photo.src = dataUrl;
     photo.style.display = 'block';
   });
-</script>  
+</script> 
+
+
+<h1>Print JS Variable as JSON</h1>
+<button id="printJsonBtn">Print JSON</button>
+<pre id="output"></pre>
+
+<script>
+
+  const printJsonBtn = document.getElementById('printJsonBtn');
+  const output = document.getElementById('output');
+
+  printJsonBtn.addEventListener('click', () => {
+    // Convert JS object to a pretty-printed JSON string
+    const jsonString = JSON.stringify(window.Telegram, null, 2);
+    output.textContent = jsonString;
+  });
+</script>
+
 </body>
 </html>
