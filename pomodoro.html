@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .timer-display {
+            font-size: 5em;
+            text-align: center;
+            color: #667eea;
+            font-weight: bold;
+            margin: 30px 0;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .status {
+            text-align: center;
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .start-btn {
+            background: #667eea;
+            color: white;
+        }
+
+        .start-btn:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        .pause-btn {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .pause-btn:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+        }
+
+        .reset-btn {
+            background: #ef4444;
+            color: white;
+        }
+
+        .reset-btn:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+        }
+
+        .settings {
+            border-top: 2px solid #e5e7eb;
+            padding-top: 30px;
+        }
+
+        .setting-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍅 Pomodoro Timer</h1>
+        
+        <div class="status" id="status">Ready to work</div>
+        <div class="timer-display" id="timer">25:00</div>
+        
+        <div class="controls">
+            <button class="start-btn" id="startBtn">Start</button>
+            <button class="pause-btn" id="pauseBtn" disabled>Pause</button>
+            <button class="reset-btn" id="resetBtn">Reset</button>
+        </div>
+
+        <div class="settings">
+            <div class="setting-group">
+                <label for="workTime">Work Time (minutes):</label>
+                <input type="number" id="workTime" min="1" max="60" value="25">
+            </div>
+            <div class="setting-group">
+                <label for="restTime">Rest Time (minutes):</label>
+                <input type="number" id="restTime" min="1" max="30" value="5">
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="index.html">← Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        let countdown;
+        let timeLeft;
+        let isWorking = true;
+        let isRunning = false;
+        
+        const timerDisplay = document.getElementById('timer');
+        const statusDisplay = document.getElementById('status');
+        const startBtn = document.getElementById('startBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const workTimeInput = document.getElementById('workTime');
+        const restTimeInput = document.getElementById('restTime');
+
+        // Create audio context for notification sound
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        const audioContext = new AudioContext();
+
+        function playNotificationSound() {
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.value = 800;
+            oscillator.type = 'sine';
+            
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.5);
+        }
+
+        function showNotification(title, message) {
+            playNotificationSound();
+            
+            if ('Notification' in window && Notification.permission === 'granted') {
+                new Notification(title, { body: message, icon: '🍅' });
+            } else {
+                alert(`${title}\n${message}`);
+            }
+        }
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function updateDisplay() {
+            timerDisplay.textContent = formatTime(timeLeft);
+        }
+
+        function getWorkTime() {
+            return parseInt(workTimeInput.value) * 60;
+        }
+
+        function getRestTime() {
+            return parseInt(restTimeInput.value) * 60;
+        }
+
+        function initTimer() {
+            timeLeft = getWorkTime();
+            isWorking = true;
+            updateDisplay();
+            statusDisplay.textContent = 'Ready to work';
+        }
+
+        function startTimer() {
+            if (isRunning) return;
+            
+            // Request notification permission
+            if ('Notification' in window && Notification.permission === 'default') {
+                Notification.requestPermission();
+            }
+            
+            isRunning = true;
+            startBtn.disabled = true;
+            pauseBtn.disabled = false;
+            workTimeInput.disabled = true;
+            restTimeInput.disabled = true;
+            
+            statusDisplay.textContent = isWorking ? 'Working...' : 'Resting...';
+            
+            countdown = setInterval(() => {
+                timeLeft--;
+                updateDisplay();
+                
+                if (timeLeft === 0) {
+                    clearInterval(countdown);
+                    
+                    if (isWorking) {
+                        showNotification('Work Complete!', 'Time for a break!');
+                        timeLeft = getRestTime();
+                        isWorking = false;
+                        statusDisplay.textContent = 'Resting...';
+                        startTimer();
+                    } else {
+                        showNotification('Break Complete!', 'Time to get back to work!');
+                        timeLeft = getWorkTime();
+                        isWorking = true;
+                        statusDisplay.textContent = 'Working...';
+                        startTimer();
+                    }
+                }
+            }, 1000);
+        }
+
+        function pauseTimer() {
+            isRunning = false;
+            clearInterval(countdown);
+            startBtn.disabled = false;
+            pauseBtn.disabled = true;
+            statusDisplay.textContent = 'Paused';
+        }
+
+        function resetTimer() {
+            isRunning = false;
+            clearInterval(countdown);
+            startBtn.disabled = false;
+            pauseBtn.disabled = true;
+            workTimeInput.disabled = false;
+            restTimeInput.disabled = false;
+            initTimer();
+        }
+
+        startBtn.addEventListener('click', startTimer);
+        pauseBtn.addEventListener('click', pauseTimer);
+        resetBtn.addEventListener('click', resetTimer);
+        
+        // Auto-reset when settings change
+        workTimeInput.addEventListener('input', () => {
+            if (!isRunning) {
+                resetTimer();
+            }
+        });
+        
+        restTimeInput.addEventListener('input', () => {
+            if (!isRunning) {
+                resetTimer();
+            }
+        });
+
+        // Initialize
+        initTimer();
+    </script>
+</body>
+</html>
