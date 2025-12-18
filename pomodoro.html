@@ -182,9 +182,10 @@
 
     <script>
         let countdown;
-        let timeLeft;
+        let endTime;
         let isWorking = true;
         let isRunning = false;
+        let timeLeftWhenPaused = 0;
         
         const timerDisplay = document.getElementById('timer');
         const statusDisplay = document.getElementById('status');
@@ -231,8 +232,8 @@
             return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
         }
 
-        function updateDisplay() {
-            timerDisplay.textContent = formatTime(timeLeft);
+        function updateDisplay(seconds) {
+            timerDisplay.textContent = formatTime(seconds);
         }
 
         function getWorkTime() {
@@ -244,10 +245,35 @@
         }
 
         function initTimer() {
-            timeLeft = getWorkTime();
+            timeLeftWhenPaused = getWorkTime();
             isWorking = true;
-            updateDisplay();
+            updateDisplay(timeLeftWhenPaused);
             statusDisplay.textContent = 'Ready to work';
+        }
+
+        function tick() {
+            const now = Date.now();
+            const timeLeft = Math.ceil((endTime - now) / 1000);
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                
+                if (isWorking) {
+                    showNotification('Work Complete!', 'Time for a break!');
+                    timeLeftWhenPaused = getRestTime();
+                    isWorking = false;
+                    statusDisplay.textContent = 'Resting...';
+                    startTimer();
+                } else {
+                    showNotification('Break Complete!', 'Time to get back to work!');
+                    timeLeftWhenPaused = getWorkTime();
+                    isWorking = true;
+                    statusDisplay.textContent = 'Working...';
+                    startTimer();
+                }
+            } else {
+                updateDisplay(timeLeft);
+            }
         }
 
         function startTimer() {
@@ -266,36 +292,28 @@
             
             statusDisplay.textContent = isWorking ? 'Working...' : 'Resting...';
             
-            countdown = setInterval(() => {
-                timeLeft--;
-                updateDisplay();
-                
-                if (timeLeft === 0) {
-                    clearInterval(countdown);
-                    
-                    if (isWorking) {
-                        showNotification('Work Complete!', 'Time for a break!');
-                        timeLeft = getRestTime();
-                        isWorking = false;
-                        statusDisplay.textContent = 'Resting...';
-                        startTimer();
-                    } else {
-                        showNotification('Break Complete!', 'Time to get back to work!');
-                        timeLeft = getWorkTime();
-                        isWorking = true;
-                        statusDisplay.textContent = 'Working...';
-                        startTimer();
-                    }
-                }
-            }, 1000);
+            // Set end time based on current time plus remaining seconds
+            endTime = Date.now() + (timeLeftWhenPaused * 1000);
+            
+            // Update immediately and then every 100ms for smooth updates
+            tick();
+            countdown = setInterval(tick, 100);
         }
 
         function pauseTimer() {
             isRunning = false;
             clearInterval(countdown);
+            
+            // Calculate remaining time when paused
+            const now = Date.now();
+            timeLeftWhenPaused = Math.max(0, Math.ceil((endTime - now) / 1000));
+            
             startBtn.disabled = false;
             pauseBtn.disabled = true;
             statusDisplay.textContent = 'Paused';
+            
+            // Update display with paused time
+            updateDisplay(timeLeftWhenPaused);
         }
 
         function resetTimer() {
