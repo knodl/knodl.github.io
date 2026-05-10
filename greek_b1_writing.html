@@ -6,7 +6,7 @@
 <title>Β1 Writing Prep · Greek Certification</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=GFS+Neohellenic:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --paper: #f4ecdc;
@@ -25,10 +25,10 @@
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'GFS Neohellenic', 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;
     background: var(--paper);
     color: var(--ink);
-    line-height: 1.65;
+    line-height: 1.7;
     font-size: 17px;
     background-image:
       radial-gradient(ellipse at top left, rgba(176,138,60,.08), transparent 50%),
@@ -81,7 +81,7 @@
   }
 
   h1 {
-    font-family: 'GFS Didot', 'Cormorant Garamond', serif;
+    font-family: 'GFS Didot', 'Noto Serif', Georgia, serif;
     font-size: clamp(2.4rem, 6vw, 4.2rem);
     line-height: 1;
     font-weight: 400;
@@ -95,9 +95,9 @@
   }
 
   .subtitle {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Noto Serif', Georgia, serif;
     font-style: italic;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: var(--ink-soft);
     max-width: 580px;
     margin: 0 auto;
@@ -128,7 +128,7 @@
 
   .section-num {
     display: inline-block;
-    font-family: 'GFS Didot', serif;
+    font-family: 'GFS Didot', 'Noto Serif', serif;
     font-style: italic;
     font-size: 1.1rem;
     color: var(--red);
@@ -136,7 +136,7 @@
   }
 
   h2 {
-    font-family: 'GFS Didot', 'Cormorant Garamond', serif;
+    font-family: 'GFS Didot', 'Noto Serif', Georgia, serif;
     font-size: clamp(1.8rem, 4vw, 2.6rem);
     font-weight: 400;
     line-height: 1.1;
@@ -145,9 +145,9 @@
   }
 
   .section-lead {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Noto Serif', Georgia, serif;
     font-style: italic;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: var(--ink-soft);
     margin-bottom: 36px;
     padding-bottom: 24px;
@@ -156,7 +156,7 @@
   }
 
   h3 {
-    font-family: 'GFS Didot', serif;
+    font-family: 'GFS Didot', 'Noto Serif', serif;
     font-size: 1.4rem;
     font-weight: 400;
     margin: 28px 0 10px;
@@ -202,13 +202,13 @@
   }
 
   .filler-title {
-    font-family: 'GFS Didot', serif;
+    font-family: 'GFS Didot', 'Noto Serif', serif;
     font-size: 1.5rem;
     margin-bottom: 4px;
   }
 
   .filler-en {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Noto Serif', Georgia, serif;
     font-style: italic;
     color: var(--ink-soft);
     margin-bottom: 18px;
@@ -216,9 +216,9 @@
   }
 
   .filler-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    line-height: 1.7;
+    font-family: 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
     padding: 18px 22px;
     background: var(--paper);
     border-left: 3px solid var(--red);
@@ -266,75 +266,52 @@
   }
 
   .filler-uses strong {
-    font-family: 'GFS Neohellenic', serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
     color: var(--red);
   }
 
-  /* ========== DRILL CARDS ========== */
-  .drills {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 22px;
-    counter-reset: drill;
-  }
-
-  .drill {
+  /* ========== TEMPLATE EXAMPLES ========== */
+  .template {
     background: var(--paper-deep);
     border: 1px solid var(--rule);
-    padding: 28px 32px 28px 76px;
+    padding: 36px 40px;
+    margin-bottom: 36px;
     position: relative;
-    counter-increment: drill;
-    box-shadow: 2px 2px 0 rgba(176,138,60,.12);
+    box-shadow: 3px 3px 0 rgba(166,50,50,.08), 6px 6px 18px rgba(31,26,20,.06);
   }
 
-  .drill::before {
-    content: counter(drill, decimal-leading-zero);
-    position: absolute;
-    left: 22px;
-    top: 26px;
-    font-family: 'GFS Didot', serif;
-    font-size: 2.2rem;
-    color: var(--red);
+  .template-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--rule);
+    margin-bottom: 24px;
+  }
+
+  .template-num {
+    font-family: 'GFS Didot', 'Noto Serif', serif;
     font-style: italic;
+    font-size: 2.4rem;
+    color: var(--red);
     line-height: 1;
   }
 
-  .drill-prompt {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem;
-    line-height: 1.55;
-    margin-bottom: 16px;
-    color: var(--ink);
+  .template-title {
+    font-family: 'GFS Didot', 'Noto Serif', serif;
+    font-size: 1.7rem;
+    line-height: 1.1;
+    flex: 1;
+    margin: 0 16px;
   }
 
-  .drill-prompt em {
-    color: var(--red-deep);
-  }
-
-  .drill-strategy {
-    background: var(--paper);
-    padding: 14px 18px;
-    border-left: 3px solid var(--olive);
-    font-size: .95rem;
-    margin-top: 12px;
-  }
-
-  .drill-strategy strong {
-    color: var(--olive);
-    font-family: 'GFS Neohellenic', serif;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    font-size: .8rem;
-    display: block;
-    margin-bottom: 4px;
-  }
-
-  .drill-tags {
+  .template-tags {
     display: flex;
-    gap: 8px;
+    gap: 6px;
     flex-wrap: wrap;
-    margin-top: 14px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     letter-spacing: .15em;
@@ -350,6 +327,86 @@
   .tag.formal { border-color: var(--red); color: var(--red); }
   .tag.informal { border-color: var(--olive); color: var(--olive); }
   .tag.level { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  .template-scenario {
+    font-family: 'Noto Serif', Georgia, serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+    padding: 12px 16px;
+    background: var(--paper);
+    border-left: 3px solid var(--olive);
+  }
+
+  .block {
+    margin-bottom: 18px;
+    position: relative;
+    padding-left: 110px;
+  }
+
+  .block-label {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 95px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .block-label small {
+    display: block;
+    color: var(--olive);
+    margin-top: 3px;
+    letter-spacing: .1em;
+  }
+
+  .block-text {
+    font-family: 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    padding: 16px 20px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+  }
+
+  .block.filler .block-text {
+    border-left: 3px solid var(--red);
+  }
+
+  .block.filler .block-label {
+    color: var(--red-deep);
+  }
+
+  .total-line {
+    margin-top: 22px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--rule);
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--olive);
+  }
+
+  .total-line strong {
+    color: var(--red);
+  }
+
+  @media (max-width: 600px) {
+    .block { padding-left: 0; padding-top: 28px; }
+    .block-label { position: static; width: auto; margin-bottom: 6px; display: inline-block; }
+    .block-label small { display: inline; margin-left: 8px; }
+    .template { padding: 24px 22px; }
+    .template-title { margin: 0; font-size: 1.4rem; }
+    .template-num { font-size: 1.8rem; }
+  }
 
   /* ========== SCORE BOX ========== */
   .score-card {
@@ -373,7 +430,7 @@
 
   .score-card h3 {
     color: var(--gold);
-    font-family: 'GFS Didot', serif;
+    font-family: 'GFS Didot', 'Noto Serif', serif;
     font-size: 1.6rem;
     margin: 0 0 18px;
   }
@@ -405,7 +462,7 @@
     padding-top: 30px;
     border-top: 3px double var(--rule);
     text-align: center;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Noto Serif', Georgia, serif;
     font-style: italic;
     color: var(--ink-soft);
   }
@@ -420,8 +477,6 @@
   @media (max-width: 600px) {
     .container { padding: 40px 20px 60px; }
     .filler { padding: 28px 22px; }
-    .drill { padding: 24px 20px 24px 60px; }
-    .drill::before { left: 16px; font-size: 1.8rem; }
     .meta { gap: 18px; }
     body { font-size: 16px; }
   }
@@ -430,7 +485,7 @@
   @media print {
     body { background: white; }
     body::before { display: none; }
-    .filler, .drill { box-shadow: none; break-inside: avoid; }
+    .filler, .template { box-shadow: none; break-inside: avoid; }
     section { break-inside: avoid; }
   }
 </style>
@@ -448,7 +503,7 @@
       <span>150 λέξεις</span>
       <span>4 τύποι κειμένου</span>
       <span>3 fillers</span>
-      <span>10 drills</span>
+      <span>4 πλήρη παραδείγματα</span>
     </div>
   </header>
 
@@ -549,145 +604,194 @@
     </div>
   </section>
 
-  <!-- ============ DRILLS ============ -->
-  <section id="drills">
+  <!-- ============ TEMPLATE EXAMPLES ============ -->
+  <section id="templates">
     <span class="section-num">— III —</span>
-    <h2>Drill Sheet · 10 Sample Prompts</h2>
-    <p class="section-lead">Realistic exam prompts. For each one, decide: which of the 4 templates? which filler? then write a 150-word response in 25–30 minutes (the real exam allows ~27 min per text).</p>
+    <h2>Worked Examples · 4 Text Types</h2>
+    <p class="section-lead">Each template assembled into a complete 150-word text. Follow the colour-coded blocks: red label = filler block (the reusable ~70-word chunk); other blocks adapt to the prompt. All four match the official KEG specs for B1 Παραγωγή Γραπτού Λόγου.</p>
 
-    <div class="drills">
-
-      <article class="drill">
-        <p class="drill-prompt">Γράψτε ένα γράμμα σ' έναν φίλο σας <em>που σπουδάζει στο εξωτερικό</em> και πείτε του τα νέα σας από τους τελευταίους μήνες.</p>
-        <div class="drill-strategy">
-          <strong>Strategy</strong>
-          Friendly letter template + Filler A (moving) <em>or</em> Filler B (Greek lessons). Open with Αγαπητέ μου, close with Με αγάπη.
-        </div>
-        <div class="drill-tags">
+    <!-- ===== TEMPLATE 1: FRIENDLY LETTER ===== -->
+    <article class="template">
+      <div class="template-header">
+        <div class="template-num">i</div>
+        <h3 class="template-title">Φιλική Επιστολή · Friendly Letter</h3>
+        <div class="template-tags">
           <span class="tag level">Β1 · A part</span>
           <span class="tag informal">Informal</span>
-          <span class="tag">Friendly letter</span>
         </div>
-      </article>
+      </div>
+      <p class="template-scenario">Scenario: γράφεις σε έναν φίλο που σπουδάζει στο εξωτερικό για να του πεις τα νέα σου.</p>
 
-      <article class="drill">
-        <p class="drill-prompt">Επιστρέψατε από διακοπές σε ένα ελληνικό νησί και <em>είχατε σοβαρά προβλήματα στο ξενοδοχείο</em>. Γράψτε στον διευθυντή για να εκφράσετε τα παράπονά σας και να ζητήσετε αποζημίωση.</p>
-        <div class="drill-strategy">
-          <strong>Strategy</strong>
-          Complaint template + Filler C (holidays). Stay in πληθυντικός ευγενείας. End with concrete request — refund / partial refund / written reply.
+      <div class="block">
+        <div class="block-label">Beginning <small>≈ 25 λ.</small></div>
+        <div class="block-text">
+          Αγαπητέ μου Γιώργο,<br><br>
+          Πώς είσαι; Ελπίζω να είσαι καλά εσύ και η οικογένειά σου. Εγώ είμαι μια χαρά. Έχω καιρό να σου γράψω και ήθελα να σου πω τα νέα μου.
         </div>
-        <div class="drill-tags">
+      </div>
+
+      <div class="block">
+        <div class="block-label">Main <small>≈ 25 λ.</small></div>
+        <div class="block-text">
+          Σου γράφω για να σου πω ότι έγιναν πολλά πράγματα τους τελευταίους μήνες στη ζωή μου. Η αλήθεια είναι ότι όλα άλλαξαν, αλλά νομίζω προς το καλύτερο.
+        </div>
+      </div>
+
+      <div class="block filler">
+        <div class="block-label">Filler A <small>≈ 75 λ.</small></div>
+        <div class="block-text">
+          Πριν από λίγους μήνες μετακόμισα σε ένα καινούριο διαμέρισμα στο κέντρο της πόλης, επειδή ήθελα να είμαι πιο κοντά στη δουλειά μου. Στην αρχή ήταν λίγο δύσκολα, αλλά σιγά σιγά συνήθισα. Η γειτονιά είναι ήσυχη, υπάρχουν πολλά μαγαζιά κοντά και οι γείτονες είναι αρκετά φιλικοί. Το μόνο πρόβλημα είναι ότι κάποιες φορές υπάρχει πολύς θόρυβος τα βράδια και δεν μπορώ να κοιμηθώ καλά. Παρ' όλα αυτά, είμαι αρκετά ευχαριστημένος/-η με τη νέα μου ζωή εδώ.
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-label">Ending <small>≈ 25 λ.</small></div>
+        <div class="block-text">
+          Λοιπόν, αυτά από μένα. Γράψε μου σύντομα να μου πεις τα δικά σου νέα. Πες χαιρετίσματα στους γονείς σου. Μου λείπεις πολύ!<br><br>
+          Με αγάπη,<br>
+          Άννα
+        </div>
+      </div>
+
+      <div class="total-line">Σύνολο: <strong>≈ 150 λέξεις</strong></div>
+    </article>
+
+    <!-- ===== TEMPLATE 2: OFFICIAL LETTER ===== -->
+    <article class="template">
+      <div class="template-header">
+        <div class="template-num">ii</div>
+        <h3 class="template-title">Επίσημη Επιστολή · Official Letter</h3>
+        <div class="template-tags">
           <span class="tag level">Β1 · B part</span>
           <span class="tag formal">Formal</span>
-          <span class="tag">Complaint</span>
         </div>
-      </article>
+      </div>
+      <p class="template-scenario">Scenario: ζητάς πληροφορίες από ένα σχολείο ξένων γλωσσών για ένα καλοκαιρινό μάθημα ελληνικών (αιτιολογημένη αίτηση).</p>
 
-      <article class="drill">
-        <p class="drill-prompt">Θέλετε να <em>νοικιάσετε το παλιό σας διαμέρισμα</em>. Γράψτε μια αγγελία για την εφημερίδα όπου περιγράφετε το σπίτι, τη γειτονιά και τους όρους ενοικίασης.</p>
-        <div class="drill-strategy">
-          <strong>Strategy</strong>
-          Ad template + Filler A (you moved, so the old flat is free). Open with ΕΝΟΙΚΙΑΖΕΤΑΙ. Include: τετραγωνικά, δωμάτια, τιμή, τηλέφωνο.
+      <div class="block">
+        <div class="block-label">Beginning <small>≈ 25 λ.</small></div>
+        <div class="block-text">
+          Αξιότιμε κύριε / Αξιότιμη κυρία,<br><br>
+          Ονομάζομαι Άννα Ιβάνοβα και σας γράφω αυτή την επιστολή, για να σας ζητήσω κάποιες πληροφορίες σχετικά με τα καλοκαιρινά μαθήματα ελληνικών που οργανώνει το σχολείο σας.
         </div>
-        <div class="drill-tags">
+      </div>
+
+      <div class="block">
+        <div class="block-label">Main <small>≈ 25 λ.</small></div>
+        <div class="block-text">
+          Συγκεκριμένα, θα ήθελα να μάθω την τιμή, τις ημερομηνίες των μαθημάτων, καθώς και αν προσφέρετε διαμονή για τους ξένους μαθητές. Επιτρέψτε μου να σας εξηγήσω τον λόγο.
+        </div>
+      </div>
+
+      <div class="block filler">
+        <div class="block-label">Filler B <small>≈ 75 λ.</small></div>
+        <div class="block-text">
+          Εδώ και έναν χρόνο μαθαίνω ελληνικά, γιατί μου αρέσει πολύ η Ελλάδα και θέλω να ζήσω εκεί στο μέλλον. Στην αρχή ήταν πολύ δύσκολα, ειδικά η γραμματική και τα ρήματα. Όμως, με τη βοήθεια του δασκάλου μου και με αρκετή υπομονή, βλέπω ότι κάνω πρόοδο. Διαβάζω καθημερινά, ακούω ελληνική μουσική και προσπαθώ να μιλάω με φίλους από την Ελλάδα. Σύντομα θα δώσω εξετάσεις για το πιστοποιητικό ελληνομάθειας και ελπίζω να τα καταφέρω.
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-label">Ending <small>≈ 25 λ.</small></div>
+        <div class="block-text">
+          Σας ευχαριστώ εκ των προτέρων για τον χρόνο σας. Παρακαλώ, επικοινωνήστε μαζί μου στο email μου. Περιμένω την απάντησή σας.<br><br>
+          Με εκτίμηση,<br>
+          Άννα Ιβάνοβα
+        </div>
+      </div>
+
+      <div class="total-line">Σύνολο: <strong>≈ 150 λέξεις</strong></div>
+    </article>
+
+    <!-- ===== TEMPLATE 3: NEWSPAPER AD ===== -->
+    <article class="template">
+      <div class="template-header">
+        <div class="template-num">iii</div>
+        <h3 class="template-title">Αγγελία στην Εφημερίδα · Newspaper Ad</h3>
+        <div class="template-tags">
           <span class="tag level">Β1 · A part</span>
-          <span class="tag formal">Formal</span>
-          <span class="tag">Ad</span>
+          <span class="tag formal">Semi-formal</span>
         </div>
-      </article>
+      </div>
+      <p class="template-scenario">Scenario: εκτεταμένη αγγελία (διαφήμιση) — θέλεις να νοικιάσεις το παλιό σου διαμέρισμα.</p>
 
-      <article class="drill">
-        <p class="drill-prompt">Γράψτε ένα γράμμα στον διευθυντή ενός σχολείου ξένων γλωσσών στην Ελλάδα και <em>ζητήστε πληροφορίες για ένα καλοκαιρινό μάθημα ελληνικών</em> (τιμή, ημερομηνίες, διαμονή).</p>
-        <div class="drill-strategy">
-          <strong>Strategy</strong>
-          Formal letter template + Filler B (Greek lessons — explains why you want the course). Be specific about what info you need. Πληθυντικός ευγενείας.
+      <div class="block">
+        <div class="block-label">Beginning <small>≈ 20 λ.</small></div>
+        <div class="block-text">
+          ΕΝΟΙΚΙΑΖΕΤΑΙ ΔΙΑΜΕΡΙΣΜΑ<br><br>
+          Γεια σας, ονομάζομαι Άννα και θα ήθελα να νοικιάσω ένα όμορφο διαμέρισμα που έχω στο κέντρο της πόλης, σε πολύ καλή τιμή.
         </div>
-        <div class="drill-tags">
+      </div>
+
+      <div class="block">
+        <div class="block-label">Main <small>≈ 30 λ.</small></div>
+        <div class="block-text">
+          Πρόκειται για ένα διαμέρισμα 70 τετραγωνικών μέτρων, με δύο δωμάτια, σαλόνι, κουζίνα και μπαλκόνι. Είναι σε πολύ καλή κατάσταση, φωτεινό και έχει όλα τα ηλεκτρικά. Η τιμή είναι 450 ευρώ τον μήνα.
+        </div>
+      </div>
+
+      <div class="block filler">
+        <div class="block-label">Filler A <small>≈ 65 λ.</small></div>
+        <div class="block-text">
+          Πριν από λίγους μήνες μετακόμισα σε ένα καινούριο διαμέρισμα, επειδή ήθελα να είμαι πιο κοντά στη δουλειά μου. Γι' αυτό θέλω να νοικιάσω το παλιό μου σπίτι σε σοβαρούς ανθρώπους. Η γειτονιά είναι πολύ ήσυχη, υπάρχουν μαγαζιά, σχολεία και στάσεις λεωφορείων κοντά. Παρ' όλα αυτά, η περιοχή έχει και ζωή, με καφετέριες και εστιατόρια. Πιστεύω ότι είναι μια πολύ καλή ευκαιρία για μια οικογένεια ή για φοιτητές.
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-label">Ending <small>≈ 25 λ.</small></div>
+        <div class="block-text">
+          Όποιος ενδιαφέρεται, μπορεί να επικοινωνήσει μαζί μου στο τηλέφωνο 6912345678 ή με email στη διεύθυνση anna@email.gr, κάθε μέρα από τις 9 το πρωί έως τις 9 το βράδυ.
+        </div>
+      </div>
+
+      <div class="total-line">Σύνολο: <strong>≈ 140 λέξεις</strong></div>
+    </article>
+
+    <!-- ===== TEMPLATE 4: COMPLAINT LETTER ===== -->
+    <article class="template">
+      <div class="template-header">
+        <div class="template-num">iv</div>
+        <h3 class="template-title">Επιστολή Παραπόνων · Official Complaint</h3>
+        <div class="template-tags">
           <span class="tag level">Β1 · B part</span>
           <span class="tag formal">Formal</span>
-          <span class="tag">Request info</span>
         </div>
-      </article>
+      </div>
+      <p class="template-scenario">Scenario: αιτιολογημένα παράπονα — γράφεις στον δήμο για τον θόρυβο από ένα μπαρ κάτω από το σπίτι σου.</p>
 
-      <article class="drill">
-        <p class="drill-prompt">Ένας Έλληνας φίλος σας <em>σας προσκάλεσε στον γάμο του</em> τον επόμενο μήνα. Γράψτε του για να του πείτε αν θα έρθετε και για να του δώσετε τα νέα σας.</p>
-        <div class="drill-strategy">
-          <strong>Strategy</strong>
-          Friendly letter + Filler A or B. Confirm/decline early in the main paragraph, then segue: "Εν τω μεταξύ, να σου πω και τα δικά μου νέα..." → filler.
+      <div class="block">
+        <div class="block-label">Beginning <small>≈ 25 λ.</small></div>
+        <div class="block-text">
+          Αξιότιμε κύριε Δήμαρχε,<br><br>
+          Ονομάζομαι Άννα Ιβάνοβα και σας γράφω αυτή την επιστολή, για να εκφράσω τα παράπονά μου σχετικά με τον σοβαρό θόρυβο που υπάρχει στη γειτονιά μου τα βράδια.
         </div>
-        <div class="drill-tags">
-          <span class="tag level">Β1 · A part · A2 ✓</span>
-          <span class="tag informal">Informal</span>
-          <span class="tag">Friendly letter</span>
-        </div>
-      </article>
+      </div>
 
-      <article class="drill">
-        <p class="drill-prompt"><em>Ένα μπαρ κάτω από το σπίτι σας</em> κάνει πολύ θόρυβο τα βράδια. Γράψτε στον δήμο για να εκφράσετε τα παράπονά σας και να ζητήσετε λύση.</p>
-        <div class="drill-strategy">
-          <strong>Strategy</strong>
-          Complaint template + Filler A — this is the scenario the filler was built for. Direct fit. End with concrete demand: "παρακαλώ να πάρετε μέτρα".
+      <div class="block">
+        <div class="block-label">Main <small>≈ 20 λ.</small></div>
+        <div class="block-text">
+          Δυστυχώς, εδώ και αρκετό καιρό αντιμετωπίζω ένα πραγματικά μεγάλο πρόβλημα και πιστεύω ότι πρέπει να σας ενημερώσω, γιατί η κατάσταση δεν μπορεί να συνεχιστεί άλλο.
         </div>
-        <div class="drill-tags">
-          <span class="tag level">Β1 · B part</span>
-          <span class="tag formal">Formal</span>
-          <span class="tag">Complaint</span>
-        </div>
-      </article>
+      </div>
 
-      <article class="drill">
-        <p class="drill-prompt">Θέλετε να <em>βρείτε έναν Έλληνα συνομιλητή</em> για να εξασκείτε τα ελληνικά σας. Γράψτε μια ανακοίνωση/αγγελία για τον πίνακα ανακοινώσεων του σχολείου σας.</p>
-        <div class="drill-strategy">
-          <strong>Strategy</strong>
-          Ad template (lighter, more personal tone) + Filler B (Greek lessons — directly explains why). Include level, availability, contact.
+      <div class="block filler">
+        <div class="block-label">Filler A <small>(adapted)</small> <small>≈ 75 λ.</small></div>
+        <div class="block-text">
+          Πριν από λίγους μήνες μετακόμισα σε ένα καινούριο διαμέρισμα στο κέντρο της πόλης. Στην αρχή όλα ήταν εντάξει και η γειτονιά μού άρεσε πολύ. Όμως, εδώ και μερικές εβδομάδες, υπάρχει πάρα πολύς θόρυβος τα βράδια από ένα μπαρ που βρίσκεται κάτω από το σπίτι μου. Δεν μπορώ να κοιμηθώ, να ξεκουραστώ ή να δουλέψω σπίτι. Έχω μιλήσει αρκετές φορές με τον ιδιοκτήτη, αλλά χωρίς αποτέλεσμα. Παρ' όλα αυτά, η κατάσταση γίνεται όλο και χειρότερη.
         </div>
-        <div class="drill-tags">
-          <span class="tag level">Β1 · A part · A2 ✓</span>
-          <span class="tag informal">Semi-formal</span>
-          <span class="tag">Ad</span>
-        </div>
-      </article>
+      </div>
 
-      <article class="drill">
-        <p class="drill-prompt">Παραγγείλατε ένα προϊόν από ένα ηλεκτρονικό κατάστημα και <em>ήρθε χαλασμένο και με μεγάλη καθυστέρηση</em>. Γράψτε επίσημη επιστολή παραπόνων.</p>
-        <div class="drill-strategy">
-          <strong>Strategy</strong>
-          Complaint template. This one needs an adapted micro-filler — describe the order timeline using past tenses. Use Filler A only as a brief context line ("μετακόμισα και χρειαζόμουν επειγόντως..."). Demand: refund or replacement.
+      <div class="block">
+        <div class="block-label">Ending <small>≈ 30 λ.</small></div>
+        <div class="block-text">
+          Για τον λόγο αυτό, θα παρακαλούσα πολύ να εξετάσετε το πρόβλημα και να πάρετε τα κατάλληλα μέτρα το συντομότερο δυνατόν. Σας ευχαριστώ εκ των προτέρων για την κατανόησή σας.<br><br>
+          Με εκτίμηση,<br>
+          Άννα Ιβάνοβα
         </div>
-        <div class="drill-tags">
-          <span class="tag level">Β1 · B part</span>
-          <span class="tag formal">Formal</span>
-          <span class="tag">Complaint</span>
-        </div>
-      </article>
+      </div>
 
-      <article class="drill">
-        <p class="drill-prompt">Γράψτε μια κάρτα σε <em>έναν φίλο σας από τις διακοπές σας</em> και πείτε του πώς περνάτε.</p>
-        <div class="drill-strategy">
-          <strong>Strategy</strong>
-          A2-style. Friendly letter (shortened) + Filler C (holidays). Keep it lighter — for A2 you can drop the filler word count to ~50 and keep total around 80–100 words.
-        </div>
-        <div class="drill-tags">
-          <span class="tag level">A2 ✓ · B1 light</span>
-          <span class="tag informal">Informal</span>
-          <span class="tag">Postcard</span>
-        </div>
-      </article>
+      <div class="total-line">Σύνολο: <strong>≈ 150 λέξεις</strong></div>
+    </article>
 
-      <article class="drill">
-        <p class="drill-prompt">Γράψτε στον δήμαρχο της πόλης σας για <em>να ζητήσετε άδεια να οργανώσετε μια εκδήλωση</em> στην πλατεία της γειτονιάς σας.</p>
-        <div class="drill-strategy">
-          <strong>Strategy</strong>
-          Formal letter (request for permission) + Filler A (new neighbourhood — explains why you want to organise something local). State event type, date, expected attendees, why it matters.
-        </div>
-        <div class="drill-tags">
-          <span class="tag level">Β1 · B part</span>
-          <span class="tag formal">Formal</span>
-          <span class="tag">Request permission</span>
-        </div>
-      </article>
-
-    </div>
   </section>
 
   <!-- ============ FOOTER ============ -->
