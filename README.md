@@ -14,3 +14,4 @@ My formal resume can be found by the link below:
 
 ### Additional link(s)
 1. [Pomodoro Timer](pomodoro.html)
+2. [Greek B1 writing tips](greek_b1_writing.html)
